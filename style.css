@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #111;
+}
+.container {
+  position: fixed;
+  width: calc(100% - 60px);
+  height: calc(100% - 60px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  border: 2px solid rgb(54, 54, 54);
+  border-radius: 12px;
+}
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+section .row {
+  position: relative;
+  width: 100%;
+  height: 68px;
+  display: flex;
+  padding: 7px 0;
+  white-space: nowrap;
+  font-size: 36px;
+  top: -50%;
+}
+i {
+  color: rgb(77, 77, 77);
+  padding: 0 5px;
+  user-select: none;
+  cursor: pointer;
+  width: 68px;
+  line-height: 100px;
+  text-align: center;
+  vertical-align: middle;
+  transition: 0.5s;
+}
+i:hover {
+  transition: 0s;
+  font-size: 60px;
+  color: red;
+  text-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+}
+.activeNear {
+  font-size: 52px;
+  transition: 0.5s;
+  /* color: rgb(255, 0, 0); */
+}
+section .row div {
+  animation: animate1 30s linear infinite;
+  animation-delay: -60s;
+  height: 68px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+section .row div:nth-child(2) {
+  animation: animate2 80s linear infinite;
+  animation-delay: -40s;
+}
+@keyframes animate1 {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-60%);
+  }
+}
+@keyframes animate2 {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
